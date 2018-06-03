@@ -41,7 +41,13 @@ Theta_grad = zeros(size(Theta));
 %
 
 
+%J = 0.5*((Theta*X'  - Y')'*(Theta*X'  - Y'));
 
+ratings  = Theta*X';
+errors = ratings' - Y;
+error_factor = errors.*R;
+sq = error_factor.^2
+J = 0.5*sum(sq(:));
 
 
 
