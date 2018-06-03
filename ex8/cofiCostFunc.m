@@ -45,7 +45,9 @@ ratings  = Theta*X';
 errors = ratings' - Y;
 error_factor = errors.*R;
 sq = error_factor.^2;
-J = 0.5*sum(sq(:));
+Theta_sq = Theta.^2;
+X_sq = X.^2;
+J = 0.5*sum(sq(:)) + (lambda/2)*sum(Theta_sq(:)) + (lambda/2)*sum(X_sq(:));
 
 Theta_grad = error_factor'*X;
 X_grad = error_factor*Theta;
