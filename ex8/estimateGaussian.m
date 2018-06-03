@@ -25,8 +25,9 @@ sigma2 = zeros(n, 1);
 
 
 
-
-
+%mu = sum(X)/m;
+mu = mean(X);
+sigma2 = var(X,1);
 
 
 
